@@ -1,5 +1,5 @@
+// 랜덤으로 뽑아낼 '명언 (quote) / 저자 (author)' 를 객체 형식으로 지정해서 배열에 저장
 const quotes = [
-	// 랜덤으로 뽑아낼 '명언 (quote) / 저자 (author)' 를 객체 형식으로 지정해서 배열에 저장
 	{
 		quote: "The way to get started is to quit talking and begin doing.",
 		author: "Walt Disney",
@@ -41,3 +41,14 @@ const quotes = [
 		author: "Sheda Savage",
 	},
 ];
+
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+// 0 ~ quotes 배열 길이만큼 랜덤 인덱스 저장
+// quotes 원소 개수가 10 개 이면 인덱스는 0 ~ 9 까지 존재하는데,
+// 랜덤 숫자 결과 9.xxx 일 때 9 로 내리기 위해서 Math.round() 대신 Math.floor() 사용
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = todaysQuote.author;
