@@ -6,6 +6,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
+	// 현재 form 태그는 submit 이벤트를 가지기 때문에 preventDefault() 적용해서 새로고침 방지
 	// event.preventDefault() : 해당 이벤트의 기본 동작 일어나지 않도록
 	event.preventDefault(); // 여기서는 submit 이벤트가 발생될 때 새로고침되는 것을 방지
 	loginForm.classList.add(HIDDEN_CLASSNAME); // 로그인폼 사라지도록 클래스 삭제
