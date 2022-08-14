@@ -10,7 +10,7 @@ let toDos = [];
 
 function saveToDos() {
 	// 로컬 스토리지에는 오직 텍스트만 저장 가능 (배열 x)
-	// 객체이든 배열이든 무조건 문자열로 변환해주는 JSON.stringify() 사용한 것
+	// 그래서 객체이든 배열이든 무조건 문자열로 변환해주는 JSON.stringify() 사용한 것
 	// localStorage.setItem("todos", todos); => KEY : todos, VALUE : a, b, c
 	localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
@@ -38,9 +38,11 @@ function paintToDo(newTodoObj) {
 	li.id = newTodoObj.id;
 
 	const span = document.createElement("span");
+	span.className = "todoFont";
 	span.innerText = newTodoObj.text;
 
 	const button = document.createElement("button");
+	button.className = "DeleteBtn";
 	button.innerText = "❌";
 
 	// 버튼 클릭 시 해당 todo 가 삭제될 수 있도록 이벤트 등록

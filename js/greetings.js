@@ -1,23 +1,38 @@
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input"); // id 가 login-form 인 곳에서 제일 처음 적힌 input 태그를 가져옴.
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden";
-const USERNAME_KEY = "username";
+const signIn = document.querySelector(".signIn");
+const formInput = document.querySelector("#login-form input");
+const submitBtn = document.querySelector("#login-form button");
+
+function showForm() {
+	signIn.classList.add("hidden");
+	formInput.classList.remove("hidden");
+	submitBtn.classList.remove("hidden");
+}
 
 function onLoginSubmit(event) {
 	// 현재 form 태그는 submit 이벤트를 가지기 때문에 preventDefault() 적용해서 새로고침 방지
 	// event.preventDefault() : 해당 이벤트의 기본 동작 일어나지 않도록
 	event.preventDefault(); // 여기서는 submit 이벤트가 발생될 때 새로고침되는 것을 방지
 	loginForm.classList.add(HIDDEN_CLASSNAME); // 로그인폼 사라지도록 클래스 삭제
+
 	const username = loginInput.value; // input 의 입력값을 username 에 저장
 	localStorage.setItem(USERNAME_KEY, username); // 로컬 스토리지에 키-값 형태로 username 저장
 	paintGreetings(username);
 }
 
 function paintGreetings(username) {
-	greeting.innerText = `Hello ${username}`; // 로그인 된 유저는 문구 출력
+	greeting.innerText = `${username} 님의 Todo-List`; // 로그인 된 유저는 문구 출력
 	greeting.classList.remove(HIDDEN_CLASSNAME); // greeting 의 클래스 목록 중 "hidden" 클래스 제거
+	greeting.classList.add("username");
+	signIn.classList.add("hidden");
+	formInput.classList.add("hidden");
+	submitBtn.classList.add("hidden");
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY); // 로컬 스토리지에서 해당 KEY 에 맞는 유저 이름 가져오기

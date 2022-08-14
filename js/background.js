@@ -1,4 +1,4 @@
-const images = ["0.jpeg", "1.jpeg", "2.jpeg"];
+const images = ["0.png", "1.jpg", "2.jpg", "3.JPG"];
 
 // 0 ~ images 길이만큼 랜덤 인덱스 지정
 const chosenImage = images[Math.floor(Math.random() * images.length)];
@@ -9,7 +9,7 @@ const bgImage = document.createElement("img");
 
 // 이미지 경로 지정
 bgImage.src = `img/${chosenImage}`;
+const imageUrl = `url(${bgImage.src})`;
 
-// appendChild() : 부모 객체 아래에 자식 객체 추가
-// append 대신 prepend 사용하면 맨 앞에 추가
-document.body.appendChild(bgImage);
+// body 배경색 지정 (url 형태로 지정해줄 것)
+document.body.style.backgroundImage = imageUrl;

@@ -42,8 +42,8 @@ const quotes = [
 	},
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+const quote = document.querySelector("#quote div:nth-child(1)");
+const author = document.querySelector("#quote div:nth-child(2)");
 
 // 0 ~ quotes 배열 길이만큼 랜덤 인덱스 저장
 // quotes 원소 개수가 10 개 이면 인덱스는 0 ~ 9 까지 존재하는데,
@@ -51,4 +51,4 @@ const author = document.querySelector("#quote span:last-child");
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+author.innerText = `- ${todaysQuote.author} -`;
