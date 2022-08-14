@@ -1,3 +1,141 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 .hidden {
 	display: none;
+}
+
+input {
+	height: 20px;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+}
+
+input:first-child {
+	width: 200px;
+}
+
+input:last-child {
+	width: 240px;
+}
+
+input::placeholder {
+	font-size: 10px;
+}
+
+.signIn {
+	top: 30px;
+	right: 50px;
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+	font-size: larger;
+}
+
+#login-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+}
+
+#login-form input {
+	width: 200px;
+	height: 35px;
+	margin-right: 3px;
+}
+
+#submit {
+	width: 70px;
+	height: 22px;
+	margin-left: 10px;
+	color: rgb(14, 114, 168);
+	background-color: rgb(124, 205, 249);
+	font-size: 13px;
+	font-weight: 600;
+	border: none;
+	border-radius: 10%;
+}
+
+#submit:hover {
+	color: rgb(124, 205, 249);
+	background: rgb(14, 114, 168);
+}
+
+.username {
+	position: absolute;
+	top: 350px;
+	font-size: x-large;
+	color: black;
+}
+
+#clock {
+	position: absolute;
+	top: 30px;
+	font-size: 100px;
+}
+
+#quote {
+	position: absolute;
+	top: 280px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-style: italic;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#quote div:last-child {
+	margin-top: 4px;
+}
+
+#todo-form {
+	width: 350px;
+	align-items: center;
+}
+
+.todoFont {
+	position: relative;
+	left: -13px;
+	font-size: medium;
+	font-family: "Gaegu", cursive;
+}
+
+.todoInput {
+	position: relative;
+	width: 25px;
+	top: 420px;
+	left: 47px;
+	padding: 8px;
+	opacity: 80%;
+}
+
+.DeleteBtn {
+	position: relative;
+	left: -4px;
+	background-color: inherit;
+	border: none;
+	opacity: 90%;
+}
+
+ul {
+	position: absolute;
+	justify-content: center;
+	text-align: center;
+	top: 450px;
+	width: 200px;
+	background-color: white;
+	list-style-type: none;
+	border-radius: 3px;
+	opacity: 80%;
+	font-size: x-large;
 }
