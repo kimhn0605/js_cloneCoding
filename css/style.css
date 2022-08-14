@@ -131,11 +131,12 @@ ul {
 	position: absolute;
 	justify-content: center;
 	text-align: center;
+	margin-top: 30px;
 	top: 450px;
 	width: 200px;
 	background-color: white;
-	list-style-type: none;
 	border-radius: 3px;
+	list-style-type: none;
 	opacity: 80%;
 	font-size: x-large;
 }
