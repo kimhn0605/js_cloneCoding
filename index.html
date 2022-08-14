@@ -4,25 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet" />
 		<title>Momentum App</title>
 	</head>
 	<body>
 		<h2 id="clock">00:00:00</h2>
-		<form class="hidden" id="login-form">
-			<input required maxlength="15" type="text" placeholder="Whay is your name?" />
-			<input type="submit" value="Log In" />
+		<button class="signIn" onClick="showForm()">Sign in</button>
+		<form id="login-form">
+			<input
+				required
+				class="hidden"
+				maxlength="15"
+				type="text"
+				placeholder="이름을 입력해주세요."
+			/>
+			<button class="hidden" id="submit" type="submit">Sign in</button>
 		</form>
 		<h1 class="hidden" id="greeting"></h1>
 		<div id="quote">
-			<span> </span>
-			<span> </span>
+			<div></div>
+			<div></div>
 		</div>
 		<div id="weather">
 			<span></span>
 			<span></span>
 		</div>
 		<form id="todo-form">
-			<input type="text" required placeholder="Write a To Do and Press Enter." />
+			<input type="text" required class="todoInput" placeholder="Write a To Do and Press Enter." />
 		</form>
 		<ul id="todo-list"></ul>
 
